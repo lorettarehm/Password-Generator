@@ -135,9 +135,9 @@ function getPasswordOptions() {
     // Check if user chose at least one of the options
     if (noOptionChosen) {
         alert('You have to choose at least one option.');
-    } else {
-      return arrDomain;
     }
+
+    return arrDomain;
 }
 
 // Function for getting a random element from an array
@@ -165,9 +165,10 @@ function generatePassword(arrDomain) {
       for (var i = 0; i < Number(userQtCharacter); i++) {
           finalPassword += getRandom(arrDomain);
       }
-
-      return finalPassword;
   }
+
+  return finalPassword;
+
 }
 
 // Get references to the #generate element
@@ -176,7 +177,8 @@ var generateBtn = document.querySelector('#generate');
 // Write password to the #password input
 function writePassword() {
     
-    var password = generatePassword(getPasswordOptions());
+    var passwordOptions = getPasswordOptions();
+    var password = generatePassword(passwordOptions);
     var passwordText = document.querySelector('#password');
 
     passwordText.value = password;
