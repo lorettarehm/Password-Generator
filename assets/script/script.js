@@ -100,9 +100,7 @@ var upperCasedCharacters = [
 ];
 
 // Function to prompt user for password options
-function getPasswordOptions() {
-
-    // Variable for concatenated array that contain all options chosen by the user
+function getPasswordOptions() { // Variable for concatenated array that contain all options chosen by the user
     var arrDomain = [];
 
     // Variable to check if there are no options chosen
@@ -153,21 +151,25 @@ function getRandom(arr) { // Get index with random
 
 // Function to generate password with user input
 function generatePassword(arrDomain) {
-  var userQtCharacter = prompt('How many characters you want? Minimum is 10 and maximum is 64.');
 
-  var finalPassword = '';
-  // Validate if quantity of characters chosen by the user is a number
-  if (isNaN(Number(userQtCharacter))) {
-    alert("Invalide value, please select a number.");
-  } else if (Number(userQtCharacter) < 10 || Number(userQtCharacter) > 64) {
-    alert("Invalide value, please select a number between 10 and 64.");
-  } else {
-      for (var i = 0; i < Number(userQtCharacter); i++) {
-          finalPassword += getRandom(arrDomain);
-      }
-  }
+    var finalPassword = '';
 
-  return finalPassword;
+    // Skip logic if arrDomain is empty
+    if (arrDomain.length !== 0) {
+        var userQtCharacter = prompt('How many characters you want? Minimum is 10 and maximum is 64.');
+        // Validate if quantity of characters chosen by the user is a number
+        if (isNaN(Number(userQtCharacter))) {
+            alert("Invalide value, please select a number.");
+        } else if (Number(userQtCharacter) < 10 || Number(userQtCharacter) > 64) {
+            alert("Invalide value, please select a number between 10 and 64.");
+        } else {
+            for (var i = 0; i < Number(userQtCharacter); i++) {
+                finalPassword += getRandom(arrDomain);
+            }
+        }
+    }
+
+    return finalPassword;
 
 }
 
@@ -176,7 +178,7 @@ var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
-    
+
     var passwordOptions = getPasswordOptions();
     var password = generatePassword(passwordOptions);
     var passwordText = document.querySelector('#password');
