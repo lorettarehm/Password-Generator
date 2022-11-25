@@ -1,7 +1,7 @@
 # Password-Generator
 Application that someone can use to generate a random password based on criteria selected.
 
-![badmath](https://img.shields.io/badge/JavaScript-56%25-%23efd81d)&nbsp;&nbsp;&nbsp;![badmath](https://img.shields.io/badge/HTML-14%25-%23e34c26)&nbsp;&nbsp;&nbsp;![badmath](https://img.shields.io/badge/CSS-30%25-%23563d7c)
+![badmath](https://img.shields.io/badge/JavaScript-56%25-%23efd81d)&nbsp;&nbsp;&nbsp;![badmath](https://img.shields.io/badge/HTML-15%25-%23e34c26)&nbsp;&nbsp;&nbsp;![badmath](https://img.shields.io/badge/CSS-29%25-%23563d7c)
 
 ---
 ## Installation
